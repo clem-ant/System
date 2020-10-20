@@ -14,13 +14,12 @@ case $# in
 			if [ "$#" -eq 2 ]
 			then
 				echo test
-				echo ligne $nbligne : `head -n $nbligne|tail -1` >> $2
+				echo "ligne $nbligne : `head -n $nbligne $1|tail -1`" >> $2
 			else
 				echo testelse
-				echo ligne $nbligne : `head -n $nbligne|tail -1` >> fichier2
+				echo "ligne $nbligne : `head -n $nbligne $1|tail -1`" >> fichier2
 				echo testelse2
 			fi
-			echo test
 			nbligne=$((nbligne-1))
 		done
 #	2 ) cp $1 $2 && sh $0 $2;;
