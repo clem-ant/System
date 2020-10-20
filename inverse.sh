@@ -8,19 +8,27 @@ fi
 case $# in
 	1 )	nbligne=`wc -l $1|cut -f1 -d ' '`
 		echo Un seul parametre
-		echo nombre de ligne : $nbligne
+		echo nombre de ligne\(s\) : $nbligne
 		while [ $nbligne -ne 0 ]
 		do
 			if [ "$#" -eq 2 ]
 			then
-				echo test
-				echo "ligne $nbligne : `head -n $nbligne $1|tail -1`" >> $2
+				echo ligne : $nbligne
+				echo "ligne $nbligne : `head -n $nbligne $1|tail -1`" >> .inv1
+				tail -1 .inv1 >> .inv2
+				
 			else
-				echo testelse
-				echo "ligne $nbligne : `head -n $nbligne $1|tail -1`" >> fichier2
-				echo testelse2
+				echo ligne : $nbligne
+				echo "ligne $nbligne : `head -n $nbligne $1|tail -1`" >> .inv1
+				tail -1 .inv1 >> .inv2
+
 			fi
 			nbligne=$((nbligne-1))
 		done
-#	2 ) cp $1 $2 && sh $0 $2;;
+		rm .inv1
+		rm .inv2
+		
+		
+#	2 ) cp $1 $2
+#		sh $0 $2;;
 esac
