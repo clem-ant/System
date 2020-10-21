@@ -14,7 +14,7 @@ relancer_n()
 	done
 }
 affichage_menu
-while read "$"choix var1
+while read choix var1
 do
 	case $choix in
 		fin ) 
