@@ -9,7 +9,6 @@ relancer_n()
 {
 	for i in $(seq 1 $1);
 	do
-		echo i = $i
 		`tail -n $i temp|head -1`
 	done
 }
@@ -32,4 +31,3 @@ do
 	esac
 	affichage_menu
 done
-
