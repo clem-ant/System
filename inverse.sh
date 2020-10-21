@@ -25,10 +25,7 @@ case $# in
 			fi
 			nbligne=$((nbligne-1))
 		done
-		rm .inv1
-		rm .inv2
-		
-		
-#	2 ) cp $1 $2
-#		sh $0 $2;;
+		rm .inv1;;
+	2 ) cp $1 $2
+		sh $0 $2;;
 esac
